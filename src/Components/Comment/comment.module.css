@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    padding: 5px;
+    margin: 5px;
+
+    background-color: #d8b4fe;
+    border-radius: 5px;
+
+    border: 1px solid #ccc;
+}
+
+h4{
+    font-size: 12px;
+    font-family: Roboto;
+    font-weight: 400;
+}
+
+p{
+    font-size: 10px;
+    color: rgb(60, 60, 60);
+}

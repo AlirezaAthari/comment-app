@@ -1,0 +1,34 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 800px;
+
+    background-color: #d8b4fe;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    margin: 30px;
+
+    padding: 15px;
+}
+
+.comments{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    padding: 10px 25px;
+    background-color: #fff;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    margin: 15px;
+
+    width: 500px;
+}

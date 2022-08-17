@@ -1,0 +1,72 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 10px 25px;
+    margin: 15px;
+
+    background-color: #fff;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    width: 500px;
+}
+
+label{
+    margin-bottom: 10px;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    width: 100%;
+    padding: 2px;
+
+    border: #ccc solid 1px;
+    border-radius: 5px;
+}
+
+input:focus{
+    outline: none;
+    border: 1px solid #7e22ce;
+}
+
+button{
+    width: 33.3%;
+    align-self: center;
+    border-radius: 5px;
+}
+
+textarea{
+    resize: none;
+
+    padding: 2px;
+
+    border: #ccc solid 1px;
+    border-radius: 5px;
+}
+
+textarea:focus{
+    
+    outline: none;
+    border: 1px solid #7e22ce;
+}
+
+h3{
+    font-size: 17px;
+    width: 100%;
+    text-align: center;
+    font-family: Roboto;
+}
+
+.add{
+    background-color: #7e22ce;
+    color: #fff;
+    border: none;
+    padding: 4px;
+    width: 25%;
+}
