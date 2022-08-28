@@ -1,7 +1,7 @@
 import styles from "../Comment/comment.module.css"
-const Comment = ({comment , getClickedComment}) => {
+const Comment = ({comment}) => {
     return ( 
-        <div  onClick={getClickedComment} value={comment} className={styles.container} >
+        <div value={comment} className={styles.container} >
             <h4>{comment.name}</h4>
             <p>{comment.email}</p>
         </div>

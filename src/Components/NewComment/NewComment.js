@@ -1,9 +1,12 @@
 import { useState } from "react";
 import styles from "../NewComment/newComment.module.css";
 import http from "../../Services/http";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
-const NewComment = ({addNewComment}) => {
+const NewComment = () => {
     const [newComment , setNewComment] = useState({name : "" , email : "" , body : ""});
+    const navigate = useNavigate();
 
     const changeHandler = (e) => {
         setNewComment({...newComment , [e.target.name] : e.target.value});
@@ -16,9 +19,9 @@ const NewComment = ({addNewComment}) => {
             return;
         }
 
-        http.post("/comments",newComment)
-        .then((response) => {
-            addNewComment(response.data);
+        http.post("/comments",newComment).then((response) => { 
+            navigate('/');
+            toast.success('comment added');
         }).catch((error) => console.log(error))
 
         setNewComment({name : "" , email : "" , body : ""})

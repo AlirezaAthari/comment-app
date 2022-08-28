@@ -1,20 +1,13 @@
 import { useEffect, useState } from "react";
 import Comment from "../../Components/Comment/Comment";
-import FullComment from "../../Components/FullComment/FullComment";
-import NewComment from "../../Components/NewComment/NewComment";
 import styles from "../Discussion/discussion.module.css";
 import { toast } from 'react-toastify';
 import http from "../../Services/http";
+import { Link, Outlet } from "react-router-dom";
 
 const Discussion = () => {
     const [comments , setComments] = useState([]);
-    const [clickedComment , setClickedComment] = useState(null);
     const [error , setError] = useState(false)
-
-    const deleteComment = () => {
-        setClickedComment(null);
-        toast.success('deleted!');
-    }
 
     useEffect(() => {
         const getComments = async () => {
@@ -30,7 +23,7 @@ const Discussion = () => {
 
         }
         getComments();
-    } , [ , clickedComment])
+    } , [])
 
     const renderComments = () => {
         let renderValue = <p>Loading ...</p>
@@ -41,7 +34,13 @@ const Discussion = () => {
             renderValue = 
                 <section className={styles.comments}>
                     <h3>Comments</h3>
-                    {comments.map(c => <Comment comment={c} key={c.id} getClickedComment={() => setClickedComment(c)}/>)}
+                    {comments.map(
+                    c => 
+                    <Link to={`comments/${c.id}`} key={c.id}>
+                        <Comment comment={c}>
+                        </Comment>
+                    </Link>
+                    )}
                 </section>
         }
         return renderValue;
@@ -50,8 +49,7 @@ const Discussion = () => {
     return ( 
         <div className={styles.container}>
             {renderComments()}
-            <FullComment clickedComment={clickedComment} onDelete={() => deleteComment(clickedComment)}/>
-            {/* <NewComment addNewComment={(newComment) => setComments([...comments , {...newComment , postId : 1}])}></NewComment> */}
+            <Outlet/>
         </div>
      );
 }
