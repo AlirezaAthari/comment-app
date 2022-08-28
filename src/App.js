@@ -1,15 +1,21 @@
 import './App.css';
-import Discussion from './Container/Discussion/Discussion';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { Routes , Route} from 'react-router-dom'
+import NotFoundPage from './Pages/NotFoundPage';
+import HomePage from './Pages/HomePage';
+import NewCommentPage from './Pages/NewCommentPage';
+import Layout from './Layout/Layout';
 
 function App() {
   return (
     <div className="App">
-      <header>Comment App
-        <ToastContainer position='top-center'/>
-      </header>
-      <Discussion/>
+      
+    <Layout>
+      <Routes>
+        <Route index element={<HomePage />}></Route>
+        <Route path='new-comment' element={<NewCommentPage/>}></Route>
+        <Route path='*' element={<NotFoundPage />}></Route>
+      </Routes>
+    </Layout>
     </div>
   );
 }

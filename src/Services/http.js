@@ -3,7 +3,6 @@ import axios from "axios";
 axios.defaults.baseURL = "http://localhost:3000";
 
 axios.interceptors.request.use((request) => {
-    console.log(request);
     return request
 } , (error) => {
     console.log(error);
@@ -11,7 +10,6 @@ axios.interceptors.request.use((request) => {
 });
 
 axios.interceptors.response.use((response) => {
-    console.log(response);
     return response
 } , (error) => {
     console.log(error);

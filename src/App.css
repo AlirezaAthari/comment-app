@@ -4,24 +4,68 @@
   align-items: center;
 
   width: 100%;
-  height: 110vh;
+  height: 100vh;
 
   background-color: #fff;
 }
 
 header{
-  padding: 10px;
+  padding: 5px;
   width: 100%;
   text-align: center;
   background-color: #a855f7;
   font-family: Roboto;
-  font-weight: 700;
+  font-weight: 400;
+}
 
-  font-size: 20px;
+.container{
+  display: flex;
+  justify-content: center;
 }
 
 footer{
-  height: 50px;
+  display: flex;
+  height: 30px;
+  align-items: center;
   width: 100%;
-  background-color: #fff;
+  background-color: #999;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+ul{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 2rem;
+  align-items: center;
+  list-style-type: none;
+}
+
+.link{
+  text-decoration: none;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.link:visited{
+  color: parent;
+}
+
+.activeLink{
+  color: white;
+}
+
+.back{
+  position: fixed;
+  bottom: 1.5rem;
+}
+
+.layout{
+  width: 100%;
+}
+
+.title{
+  font-size: 25px;
 }

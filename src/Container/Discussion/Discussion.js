@@ -29,7 +29,6 @@ const Discussion = () => {
             }
 
         }
-        console.log("object");
         getComments();
     } , [ , clickedComment])
 
@@ -52,7 +51,7 @@ const Discussion = () => {
         <div className={styles.container}>
             {renderComments()}
             <FullComment clickedComment={clickedComment} onDelete={() => deleteComment(clickedComment)}/>
-            <NewComment addNewComment={(newComment) => setComments([...comments , {...newComment , postId : 1}])}></NewComment>
+            {/* <NewComment addNewComment={(newComment) => setComments([...comments , {...newComment , postId : 1}])}></NewComment> */}
         </div>
      );
 }
