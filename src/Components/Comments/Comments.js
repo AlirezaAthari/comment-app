@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import Comment from "../../Components/Comment/Comment";
-import styles from "../Discussion/discussion.module.css";
+import Comment from "./Comment/Comment";
+import styles from "../Comments/comments.module.css";
 import { toast } from 'react-toastify';
 import http from "../../Services/http";
 import { Link, Outlet } from "react-router-dom";
 
-const Discussion = () => {
+const CommentsList = () => {
     const [comments , setComments] = useState([]);
     const [error , setError] = useState(false)
 
@@ -54,4 +54,4 @@ const Discussion = () => {
      );
 }
  
-export default Discussion;
+export default CommentsList;
